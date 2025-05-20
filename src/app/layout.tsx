@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "@rainbow-me/rainbowkit/styles.css";
+import Providers from "./providers";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,34 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <nav className="w-full flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+            <div className="flex items-center gap-2 sm:gap-4">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight">MyLogo</span>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <button className="p-2 rounded hover:bg-zinc-800 hidden sm:block">
+                {/* Explore Icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                </svg>
+              </button>
+              <button className="p-2 rounded hover:bg-zinc-800 hidden sm:block">
+                {/* User Icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 0115 0v.75a.75.75 0 01-.75.75h-13.5a.75.75 0 01-.75-.75V19.5z" />
+                </svg>
+              </button>
+              <div className="relative">
+                <ConnectButton />
+              </div>
+            </div>
+          </nav>
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
