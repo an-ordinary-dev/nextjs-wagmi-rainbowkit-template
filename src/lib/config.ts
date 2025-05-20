@@ -27,7 +27,7 @@ import { Chain, getDefaultConfig } from "@rainbow-me/rainbowkit";
 
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID as string;
 
-const supportedChains: Chain[] = [
+const supportedChains = [
   mainnet,
   sepolia,
   holesky,
@@ -48,12 +48,12 @@ const supportedChains: Chain[] = [
   filecoin,
   moonbeam,
   moonriver
-];
+] as const;
 
 export const config = getDefaultConfig({
   appName: "RainbowKit Template",
   projectId,
-  chains: supportedChains as any,
+  chains: supportedChains as unknown as readonly [Chain, ...Chain[]],
   ssr: true,
   storage: createStorage({
     storage: cookieStorage,
