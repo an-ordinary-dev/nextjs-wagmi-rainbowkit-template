@@ -2,8 +2,8 @@ import { StarIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full px-4 py-8">
-      <h1 className="text-3xl sm:text-5xl font-bold text-center text-white mb-8 leading-tight">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full px-4 py-8 bg-black text-white">
+      <h1 className="text-3xl sm:text-5xl font-bold text-center mb-8 leading-tight">
         Next.js 15.3 Template Using RainbowKit, Wagmi, and TailwindCSS
       </h1>
       <div className="w-full max-w-md flex flex-col items-center gap-6">

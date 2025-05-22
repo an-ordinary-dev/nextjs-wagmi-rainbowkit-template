@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <nav className="w-full flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+          <nav className="w-full flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10 bg-black text-white sticky top-0 z-50">
             <div className="flex items-center gap-2 sm:gap-4">
               <span className="text-xl sm:text-2xl font-bold tracking-tight">MyLogo</span>
             </div>
@@ -54,7 +54,7 @@ export default function RootLayout({
               </div>
             </div>
           </nav>
-          <main className="min-h-screen">
+          <main className="min-h-screen bg-[var(--background)]">
             {children}
           </main>
         </Providers>
