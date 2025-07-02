@@ -94,8 +94,6 @@ yarn dev
 
 ---
 
-⭐ **Credits**
-Free template by [Byteory](https://byteory.com)
 
 Don't forget to 🌟 the repo if you found it useful!
 
